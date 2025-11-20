@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title: "Shakta Technology- Admin Panel",
   description: "Software Agency",
   icons:{
-    icon: "/placeholder.ico"
+    icon: "/logo/shaktalogo.svg"
     
     
   }
