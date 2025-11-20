@@ -89,7 +89,7 @@ export default function Contact() {
     {
       icon: Phone,
       title: "Call Us",
-      lines: ["+1 (555) 123-4567", "Mon-Fri 9AM - 6PM PST"],
+      lines: ["01-5923097", "Sun-Fri 10AM - 5PM GMT"],
     },
     {
       icon: MapPin,
@@ -100,9 +100,9 @@ export default function Contact() {
       icon: Clock,
       title: "Business Hours",
       lines: [
-        "Mon - Fri: 9:00 AM - 6:00 PM",
-        "Saturday: 10:00 AM - 4:00 PM",
-        "Sunday: Closed",
+        "Sun - Fri: 10:00 AM - 5:00 PM",
+        "Saturday: Closed",
+        
       ],
     },
   ];
@@ -142,7 +142,7 @@ export default function Contact() {
                     <input
                       type="text"
                       name={field}
-                      placeholder={field === "first_name" ? "Manbir" : "Rai"}
+                      placeholder={field === "first_name" ? "Your First Name" : "Your Last Name"}
                       value={form[field as keyof typeof form]}
                       onChange={handleChange}
                       required
@@ -155,7 +155,7 @@ export default function Contact() {
               {/* Email, Phone, Company, etc. */}
               {[
                 { name: "email", placeholder: "email@example.com", type: "email" },
-                { name: "phone_number", placeholder: "+1 (555) 123-4567", type: "text" },
+                { name: "phone_number", placeholder: "9812345678", type: "text" },
                 { name: "company", placeholder: "Your Company Name", type: "text" },
               ].map((input, i) => (
                 <div key={i}>
