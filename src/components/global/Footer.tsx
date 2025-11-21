@@ -140,7 +140,7 @@ export default function Footer() {
             <ul className="space-y-3 text-gray-600 dark:text-gray-400">
               <li className="flex items-center gap-2">
                 <Mail size={18} className="text-purple-500 dark:text-purple-400" />
-                info@shaktatechnology.com
+                shaktatech11@gmail.com
               </li>
               <li className="flex items-center gap-2">
                 <Phone size={18} className="text-purple-500 dark:text-purple-400" />

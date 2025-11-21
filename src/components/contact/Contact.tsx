@@ -84,7 +84,7 @@ export default function Contact() {
     {
       icon: Mail,
       title: "Email Us",
-      lines: ["info@shaktatechnology.com", "We'll respond within 24 hours"],
+      lines: ["shaktatech11@gmail.com", "We'll respond within 24 hours"],
     },
     {
       icon: Phone,
