@@ -9,7 +9,7 @@ export default function Story() {
                        text-gray-800 dark:text-gray-100 
                        transition-colors duration-300 overflow-hidden">
       <div className="max-w-5xl mx-auto px-6 text-center">
-        
+
         {/* Animated Heading */}
         <motion.h2
           className="text-4xl sm:text-5xl font-extrabold 

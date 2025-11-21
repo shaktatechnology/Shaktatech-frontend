@@ -26,29 +26,45 @@ export default function TeamPage() {
   const storageUrl = process.env.NEXT_PUBLIC_STORAGE_URL;
 
   useEffect(() => {
-    const fetchTeam = async () => {
-      try {
-        const res = await getMembers(1, 50);
-        const members: TeamMember[] = (res.data || []).map((m: any) => ({
-          id: m.id,
-          name: m.name,
-          role: m.role || "-",
-          position: m.position || "",
-          department: m.department || "",
-          short_description: m.short_description || "",
-          image: m.image ? `${m.image}` : "",
-          linkedin: m.linkedin,
-          github: m.github,
-          facebook: m.facebook,
-          instagram: m.instagram,
-        }));
-        setTeam(members);
-      } catch (err) {
-        console.error("Failed to fetch team:", err);
-      } finally {
-        setLoading(false);
-      }
-    };
+   const fetchTeam = async () => {
+  try {
+    const res = await getMembers(1, 50);
+
+    const members: TeamMember[] = (res.data || []).map((m: any) => ({
+      id: m.id,
+      name: m.name,
+      role: m.role || "-",
+      position: m.position || "",
+      department: m.department || "",
+      short_description: m.short_description || "",
+      image: m.image ? `${m.image}` : "",
+      linkedin: m.linkedin,
+      github: m.github,
+      facebook: m.facebook,
+      instagram: m.instagram,
+    }));
+
+    // 🔥 SORTING LOGIC HERE
+    const priorityOrder = ["Director", "Managing Director", "Manager", "Full Stack Developer", "Backend", "Frontend", "CSR", "Intern"];
+
+    const sortedMembers = members.sort((a, b) => {
+      const posA = priorityOrder.indexOf(a.position ?? a.role ?? "");
+      const posB = priorityOrder.indexOf(b.position ?? b.role ?? "");
+
+      const aRank = posA === -1 ? 999 : posA;
+      const bRank = posB === -1 ? 999 : posB;
+
+      return aRank - bRank;
+    });
+
+    setTeam(sortedMembers);
+  } catch (err) {
+    console.error("Failed to fetch team:", err);
+  } finally {
+    setLoading(false);
+  }
+};
+
 
     fetchTeam();
   }, []);
