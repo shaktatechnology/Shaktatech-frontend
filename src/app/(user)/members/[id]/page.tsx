@@ -9,6 +9,7 @@ interface Props {
 export default async function MemberViewPage({ params }: Props) {
   // Await params
   const { id } = await params;
+  
 
   // Fetch member data (SERVER SIDE)
   const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}members/${id}`, {
