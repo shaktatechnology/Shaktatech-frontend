@@ -19,6 +19,9 @@ export const metadata: Metadata = {
   icons: {
     icon: "/logo/shaktalogo.ico"
 
+  },
+  verification:{
+    google: "A2P2dd5r4GK_gHT_xkKVPYlxuDHDVkd4_LgNBM0B8pA"
   }
 };
 
